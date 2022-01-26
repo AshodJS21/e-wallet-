@@ -1,28 +1,55 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Home v-if="route === 'home'" :cards="cards" @addcard="route = 'newcard'" />
+    <NewCard  v-if="route === 'newcard'"
+    @card="addCard"  :cards="cards"  :delayTime="delayTime" />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Home from "./views/home.vue";
+import NewCard from "./views/newCard.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  components: { Home, NewCard },
+  name: "App",
+  data() { return {
+      delayTime: 2,
+      cards: [],
+      route: "newcard",
+    };
+  },
+
+  methods: {
+    addCard(card) {
+      this.route = "home";
+      this.cards.push(card);
+      localStorage.setItem("cards", JSON.stringify(this.cards));
+    },
+  },
+
+  created() {
+    let cards = localStorage.getItem("cards");
+    if (cards) {
+      this.cards = JSON.parse(cards);
+    }
+  },
+};
 </script>
 
-<style lang="scss">
+
+<style lang='scss' >
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
+
 }
 </style>
