@@ -2,6 +2,7 @@
   <div>
     <h1>E-Wallet</h1>
     <h6>Active Card</h6>
+    <br>
     <div class="active">
       <Card :card="cards[activeCardIndex]" :key="activeCardIndex" />
     </div>

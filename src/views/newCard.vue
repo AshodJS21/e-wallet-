@@ -77,19 +77,19 @@
 
     <form @submit.prevent="createCard" id="form">
       <label for="number">card number </label>
-      <input type="number" id="number" v-model="user.cardNumber" />
+      <input type="number" id="number" v-model="user.cardNumber"  maxlength="16"/>
       <label for="number">card holder name </label>
-      <input type="text" id="number" v-model="user.owner" />
+      <input type="text" id="number" v-model="user.owner" maxlength="20" />
 
       <div>
         <div class="valid">
           <label for="validThru">valid thru</label>
-          <input type="text" id="validThru" v-model="user.validThru" max="4" />
+          <input type="text" id="validThru" v-model="user.validThru" maxlength="4" />
         </div>
 
         <div class="cvc">
           <label for="cvc">ccv</label>
-          <input type="number" id="cvc" v-model="user.cvc" />
+          <input type="number" id="cvc" v-model="user.cvc" maxlength="4"/>
         </div>
       </div>
 

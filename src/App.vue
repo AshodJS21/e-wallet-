@@ -33,6 +33,7 @@ export default {
       this.cards = JSON.parse(cards);
     }
   },
+  
 };
 </script>
 
