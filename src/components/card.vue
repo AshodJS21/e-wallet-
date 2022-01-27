@@ -1,5 +1,5 @@
 <template>
-  <article class="active-card">
+  <article :class="['active-card', this.card.vendor]">
     <div class="top">
       <div class="chip-wifi">
 

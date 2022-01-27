@@ -90,5 +90,25 @@ button {
   margin-bottom: 1rem;
   font-weight: bold;
 }
+
+.ICA {
+  background-color: #8051e6;
+  color: #ece6e6;
+}
+
+.Swedbank {
+  background: #ffb444;
+  color: black;
+}
+
+.AmeriaBank {
+  background: #df2f4e;
+  color: black;
+}
+
+.HSBC {
+  background: #686868;
+  color: #ece6e6;
+}
 </style>
 
